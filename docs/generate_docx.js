@@ -61,7 +61,7 @@ function bullet(text, ref = "bullets") {
     if (part.startsWith("**") && part.endsWith("**")) runs.push(new TextRun({ text: part.slice(2, -2), bold: true, font: "Montserrat", size: 22 }));
     else runs.push(new TextRun({ text: part, font: "Montserrat", size: 22 }));
   }
-  return new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: 80, line: 276 }, children: runs });
+  return new Paragraph({ numbering: { référence: ref, level: 0 }, spacing: { after: 80, line: 276 }, children: runs });
 }
 
 function numbered(text, ref = "numbers") {
@@ -71,7 +71,7 @@ function numbered(text, ref = "numbers") {
     if (part.startsWith("**") && part.endsWith("**")) runs.push(new TextRun({ text: part.slice(2, -2), bold: true, font: "Montserrat", size: 22 }));
     else runs.push(new TextRun({ text: part, font: "Montserrat", size: 22 }));
   }
-  return new Paragraph({ numbering: { reference: ref, level: 0 }, spacing: { after: 80, line: 276 }, children: runs });
+  return new Paragraph({ numbering: { référence: ref, level: 0 }, spacing: { after: 80, line: 276 }, children: runs });
 }
 
 function tableRow(cells, headerRow = false) {
@@ -111,9 +111,9 @@ const doc = new Document({
     ]
   },
   numbering: { config: [
-    { reference: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "\u2022", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },
-    { reference: "numbers", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },
-    { reference: "numbers2", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },
+    { référence: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "\u2022", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },
+    { référence: "numbers", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },
+    { référence: "numbers2", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 720, hanging: 360 } } } }] },
   ]},
   sections: [
     // ===== COUVERTURE =====
@@ -122,7 +122,7 @@ const doc = new Document({
         rows: [new TableRow({ height: { value: 15840, rule: "exact" }, children: [new TableCell({ borders: noBorders, shading: { fill: NAVY, type: ShadingType.CLEAR }, width: { size: 12240, type: WidthType.DXA }, verticalAlign: "center", margins: { top: 400, bottom: 400, left: 1200, right: 1200 },
           children: [
             new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 600 }, children: [logo()] }),
-            new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 100 }, children: [new TextRun({ text: "STRATEGIE DIGITALE 2026", font: "Montserrat", size: 20, color: ORANGE, bold: true })] }),
+            new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 100 }, children: [new TextRun({ text: "STRATÉGIE DIGITALE 2026", font: "Montserrat", size: 20, color: ORANGE, bold: true })] }),
             new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 }, children: [new TextRun({ text: "Alnaseem", font: "Montserrat", size: 56, bold: true, color: WHITE })] }),
             new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 100 }, children: [new TextRun({ text: "Sweeten your EVERYDAY", font: "Montserrat", size: 40, bold: true, color: ORANGE })] }),
             new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 600 }, children: [new TextRun({ text: "De l'occasionnel a la nécessité", font: "Montserrat", size: 24, color: "AAAAAA", italics: true })] }),
@@ -131,7 +131,7 @@ const doc = new Document({
           ]
         })]})]})]},
 
-    // ===== TABLE DES MATIERES =====
+    // ===== TABLE DES MATIÈRES =====
     { properties: { page: { size: { width: 12240, height: 15840 }, margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },
       children: [
         new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { after: 400 }, children: [new TextRun({ text: "Table des mati\u00e8res", font: "Montserrat" })] }),
@@ -152,14 +152,14 @@ new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: 
 
 p("Le marché tunisien de la glace est un marché mur, mais profondement répétitif. Depuis des annees, les memes acteurs \u2014 Selja, Ice Vegas, Eskimo, Paname \u2014 se disputent le meme territoire avec les memes armes : des product shots estivaux, des campagnes saisonnieres, et une promesse identique de \u00AB moment plaisir \u00BB."),
 
-p("Le resultat est un **ocean rouge** au sens strategique du terme : une arène saturée ou la différenciation est quasi inexistante, ou les budgets publicitaires augmentent pour des resultats décroissants, et ou le consommateur ne perçoit aucune difference réelle entre les marques. Pour lui, une glace est une glace \u2014 peu importe l'emballage."),
+p("Le resultat est un **ocean rouge** au sens stratégique du terme : une arène saturée ou la différenciation est quasi inexistante, ou les budgets publicitaires augmentent pour des resultats décroissants, et ou le consommateur ne perçoit aucune difference réelle entre les marques. Pour lui, une glace est une glace \u2014 peu importe l'emballage."),
 
 space(),
 new Paragraph({ alignment: AlignmentType.CENTER, children: [img("plv_alnaseem.jpg", 280, 460)] }),
 p("Le presentoir actuel Alnaseem en point de vente : un positionnément 100% \u00AB achat impulsif au congelateur \u00BB, identique a tous les concurrents.", { size: 18, color: MUTED, align: AlignmentType.CENTER }),
 space(),
 
-p("Si Alnaseem reste positionnée dans cet ocean rouge, elle est condamnee a n'etre qu'**une option parmi d'autres dans un congelateur bonde**. La croissance sera lente, couteuse, et entièrement dependante du budget publicitaire investi chaque ete. Des que le thermometre descend \u2014 ou que la fete est finie \u2014 les ventes s'effondrent."),
+p("Si Alnaseem reste positionnée dans cet ocean rouge, elle est condamnee a n'etre qu'**une option parmi d'autres dans un congelateur bonde**. La croissance sera lente, couteuse, et entièrement dependante du budget publicitaire investi chaque été. Des que le thermometre descend \u2014 ou que la fete est finie \u2014 les ventes s'effondrent."),
 
 space(),
 bigQuote("\u00AB On se bat pour des parts de voix dans un secteur qui s'arrete de respirer des que le thermometre descend ou que la fete est finie. \u00BB"),
@@ -168,24 +168,24 @@ space(),
 p("**Les chiffres parlent d'eux-memes :**"),
 space(),
 simpleTable(
-  ["Facteur", "Realite du Red Ocean", "Impact pour Alnaseem"],
+  ["Facteur", "Réalité du Red Ocean", "Impact pour Alnaseem"],
   [
     ["Saisonnalite", "5 mois actifs (mai-sept) sur 12", "7 mois sans dynamique commerciale digitale"],
     ["Concurrence", "5+ marques sur le meme message", "Course au budget publicitaire \u2014 le plus riche gagne, pas le plus malin"],
-    ["Differenciation", "Tous disent \u00AB plaisir, partage, ete \u00BB", "Le consommateur ne voit aucune difference entre les marques"],
-    ["Vulnérabilité", "100% météo-dependant + occasion-dependant", "Un ete pluvieux ou un contexte economique tendu = saison perdue"],
+    ["Différenciation", "Tous disent \u00AB plaisir, partage, été \u00BB", "Le consommateur ne voit aucune difference entre les marques"],
+    ["Vulnérabilité", "100% météo-dependant + occasion-dependant", "Un été pluvieux ou un contexte economique tendu = saison perdue"],
   ],
   [2200, 3580, 3580]
 ),
 
 space(),
-p("Le constat est limpide : **rester dans le Red Ocean est une impasse strategique**. Il faut un pivot. Non pas pour abandonner ce terrain \u2014 les fetes et les sorties resteront toujours un moment de consommation de glace \u2014 mais pour ouvrir un **second front** sur un territoire ou personne ne se bat encore."),
+p("Le constat est limpide : **rester dans le Red Ocean est une impasse stratégique**. Il faut un pivot. Non pas pour abandonner ce terrain \u2014 les fetes et les sorties resteront toujours un moment de consommation de glace \u2014 mais pour ouvrir un **second front** sur un territoire ou personne ne se bat encore."),
 
 // ============================================================
 // CHAPITRE 2 — LE PIVOT BLUE OCEAN
 // ============================================================
 new Paragraph({ children: [new PageBreak()] }),
-new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: "Chapitre 2 \u2014 Le pivot strategique : l'invasion du Blue Ocean", font: "Montserrat" })] }),
+new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: "Chapitre 2 \u2014 Le pivot stratégique : l'invasion du Blue Ocean", font: "Montserrat" })] }),
 
 p("La stratégie que nous proposons ne consiste pas a abandonner le Red Ocean. **Il s'agit de s'en servir comme base arriere**, tout en allant chercher la croissance massive la ou personne ne regarde : dans le détournement d'une habitude culturelle profondement ancrée dans le quotidien tunisien."),
 
@@ -224,7 +224,7 @@ colorBox([
   bullet("Le **dessert riche** (mousse, tiramisu) \u2014 gourmand mais pas frais"),
   bullet("Le **fruit** \u2014 sain mais sans surprise"),
   p("", { color: WHITE }),
-  p("**Alnaseem s'insere avant tout ca.** Frais, onctueux, avec des saveurs qui nettoient le palais \u2014 un moment de douceur qui préparé la suite. Le the reste le the, mais avant lui, il y a desormais le **\u00AB Clean Finale \u00BB** : le dessert qui libere le palais.", { color: WHITE }),
+  p("**Alnaseem s'insere avant tout ca.** Frais, onctueux, avec des saveurs qui nettoient le palais \u2014 un moment de douceur qui préparé la suite. Le the reste le the, mais avant lui, il y a désormais le **\u00AB Clean Finale \u00BB** : le dessert qui libere le palais.", { color: WHITE }),
 ], NAVY),
 
 space(),
@@ -239,7 +239,7 @@ bigQuote("\u00AB On ne vend pas du sucre. On vend la fin de la sensation de gras
 new Paragraph({ children: [new PageBreak()] }),
 new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: "Chapitre 3 \u2014 La plateforme : \u00AB Sweeten your EVERYDAY \u00BB", font: "Montserrat" })] }),
 
-p("La plateforme de marque \u00AB **Sweeten your EVERYDAY** \u00BB est construite sur un dualisme strategique delibere. Elle permet a Alnaseem d'avoir **un pied dans chaque monde** : celui des célébrations (le Red Ocean, ou la marque est déjà presente) et celui du rituel quotidien (le Blue Ocean, ou tout reste a construire)."),
+p("La plateforme de marque \u00AB **Sweeten your EVERYDAY** \u00BB est construite sur un dualisme stratégique délibéré. Elle permet a Alnaseem d'avoir **un pied dans chaque monde** : celui des célébrations (le Red Ocean, ou la marque est déjà presente) et celui du rituel quotidien (le Blue Ocean, ou tout reste a construire)."),
 
 p("Ce dualisme n'est pas une hesitation. C'est un **Grand Ecart** calculé : Alnaseem adoucit aussi bien les moments exceptionnels de la vie que la fin de chaque repas ordinaire. C'est cette double couverture qui rend la marque **incontournable 365 jours par an**, et non plus 5 mois."),
 
@@ -274,7 +274,7 @@ new Table({ width: { size: 9360, type: WidthType.DXA }, columnWidths: [4680, 468
 space(),
 new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun({ text: "L'arme secrete : des saveurs introuvables en Tunisie", font: "Montserrat" })] }),
 
-p("Ce qui rend le positionnément d'Alnaseem credible et défensible, c'est un avantage produit concret que la concurrence ne possede pas : **un arsenal de saveurs introuvables chez les concurrents tunisiens**. Alors que Selja, Ice Vegas et Eskimo se limitent au trio classique vanille-chocolat-fraise, Alnaseem propose des gouts que le consommateur tunisien n'a jamais goutes en glace locale :"),
+p("Ce qui rend le positionnément d'Alnaseem credible et défensible, c'est un avantage produit concret que la concurrence ne possède pas : **un arsenal de saveurs introuvables chez les concurrents tunisiens**. Alors que Selja, Ice Vegas et Eskimo se limitent au trio classique vanille-chocolat-fraise, Alnaseem propose des gouts que le consommateur tunisien n'a jamais goutes en glace locale :"),
 
 space(),
 simpleTable(
@@ -303,7 +303,7 @@ space(),
 bigQuote("\u00AB Nous élargissons le territoire d'Alnaseem, passant du parc d'attractions a la table a manger. En proposant de Sweeten your EVERYDAY, nous transformons la fin de chaque repas en une raison d'acheter. \u00BB"),
 
 // ============================================================
-// CHAPITRE 4 — LIGNE EDITORIALE
+// CHAPITRE 4 — LIGNE ÉDITORIALE
 // ============================================================
 new Paragraph({ children: [new PageBreak()] }),
 new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: "Chapitre 4 \u2014 Ligne éditoriale", font: "Montserrat" })] }),
@@ -327,7 +327,7 @@ simpleTable(
   [
     ["Fun, festif, communautaire", "Gourmand, rituel, complice, malin"],
     ["Challenges, partages, tags, humour tunisien", "Taste tests, recettes, \u00AB apres le repas \u00BB"],
-    ["Derja spontanee, memes, references pop culture", "Derja + references culinaires TN (couscous, ojja, kafteji)"],
+    ["Derja spontanee, memes, références pop culture", "Derja + références culinaires TN (couscous, ojja, kafteji)"],
     ["\u00AB Marque ton pote \u00BB, \u00AB Qui vient au parc? \u00BB", "\u00AB El Clean Finale \u00BB, \u00AB Avant el the, Alnaseem \u00BB"],
     ["Musique trending, couleurs vives, montage rapide", "Gros plans textures, slow motion, ASMR food"],
   ],
@@ -367,7 +367,7 @@ new Table({ width: { size: 9360, type: WidthType.DXA }, columnWidths: [4680, 468
 space(),
 new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun({ text: "Hashtags officiels", font: "Montserrat" })] }),
 
-p("L'architecture de hashtags est structuree pour couvrir les deux piliers, les saveurs, et la communaute :"),
+p("L'architecture de hashtags est structurée pour couvrir les deux piliers, les saveurs, et la communaute :"),
 space(),
 simpleTable(
   ["Usage", "Hashtags"],
@@ -398,7 +398,7 @@ space(),
 simpleTable(
   ["Etape", "Ce que pense l'utilisateur", "Plateforme qui repond"],
   [
-    [{ text: "1. DECOUVERTE", bold: true, bg: NAVY, color: WHITE }, "\"C'est quoi ce gout?! Ca existe en Tunisie?\"", "TikTok + YouTube Shorts"],
+    [{ text: "1. DÉCOUVERTE", bold: true, bg: NAVY, color: WHITE }, "\"C'est quoi ce gout?! Ca existe en Tunisie?\"", "TikTok + YouTube Shorts"],
     [{ text: "2. CURIOSITE", bold: true, bg: BLUE, color: WHITE }, "\"Je veux en savoir plus sur cette marque\"", "Instagram Reels + Stories"],
     [{ text: "3. DESIR", bold: true, bg: ORANGE, color: WHITE }, "\"Ce soir, c'est Alnaseem apres le diner\"", "Instagram Feed + Facebook"],
     [{ text: "4. ACHAT", bold: true, bg: GREEN, color: WHITE }, "\"Ou est-ce que je peux trouver ca?\"", "Facebook Ads géolocalisé"],
@@ -460,7 +460,7 @@ simpleTable(
   ["Parametre", "Detail"],
   [
     [{ text: "Fréquence", bold: true }, "12 Shorts par mois (repurpose TikTok) + 2 videos longues (3-7 minutes)"],
-    [{ text: "Videos longues", bold: true }, "\u00AB On goute TOUTES les saveurs Alnaseem \u00BB / \u00AB Le Clean Finale apres le couscous \u00BB / \u00AB Blind test en famille \u00BB / \u00AB 5 recettes dessert avec Alnaseem \u00BB"],
+    [{ text: "Videos longues", bold: true }, "\u00AB On goûté TOUTES les saveurs Alnaseem \u00BB / \u00AB Le Clean Finale apres le couscous \u00BB / \u00AB Blind test en famille \u00BB / \u00AB 5 recettes dessert avec Alnaseem \u00BB"],
     [{ text: "SEO", bold: true }, "Titres avec mots-cles, miniatures vibrantes, descriptions riches, tags en arabe + francais"],
     [{ text: "Objectif a 6 mois", bold: true }, "1 000 abonnes, 50K vues cumulees par mois, 3 videos dans le top 10 Google"],
   ],
@@ -517,7 +517,7 @@ simpleTable(
   ["Pilier", "%", "Description"],
   [
     [{ text: "Le Clean Finale", bold: true, bg: BG_MANGO }, { text: "25%", bold: true, bg: BG_MANGO }, { text: "Apres le repas, Alnaseem lave le palais. Scenes post-couscous, post-ojja, post-kafteji. Le rituel quotidien. Ce pilier ancré le Blue Ocean.", bg: BG_MANGO }],
-    [{ text: "Découverte & saveurs", bold: true, bg: BG_BLUE }, { text: "25%", bold: true, bg: BG_BLUE }, { text: "\"T'as déjà goute le cotton candy en cone?\" Taste tests, blind tests, reactions. Chaque saveur = un contenu viral en puissance.", bg: BG_BLUE }],
+    [{ text: "Découverte & saveurs", bold: true, bg: BG_BLUE }, { text: "25%", bold: true, bg: BG_BLUE }, { text: "\"T'as déjà goûté le cotton candy en cone?\" Taste tests, blind tests, reactions. Chaque saveur = un contenu viral en puissance.", bg: BG_BLUE }],
     [{ text: "Sweet Moments", bold: true, bg: BG_RED }, { text: "20%", bold: true, bg: BG_RED }, { text: "Le pilier émotionnel : fetes, anniversaires, sorties. Fun, célébratif, partageable. Ce pilier maintient le Red Ocean.", bg: BG_RED }],
     [{ text: "Recettes & Kyroo", bold: true, bg: BG_PURPLE }, { text: "20%", bold: true, bg: BG_PURPLE }, { text: "Recettes dessert (coupes, verrines, milkshakes) + saga Kyroo \"le livreur de dessert\". Contenu a forte valeur de save.", bg: BG_PURPLE }],
     [{ text: "Produit & promo", bold: true }, "10%", "Lancements de saveurs, promos ponctuelles. Maximum 10% du contenu \u2014 on inspire, on ne pousse pas."],
@@ -570,7 +570,7 @@ space(),
 colorBox([
   p("**[INTRO 0:00-0:30]** Une table avec un vrai couscous tunisien qui fume encore. 3 personnes attablees. \u00AB On vient de manger el couscous te3 ommi. El palais ynawwedh. Nhar el yom, on va tester un nouveau rituel : une glace AVANT el the, comme Clean Finale. \u00BB", { color: WHITE }),
   p("", { color: WHITE }),
-  p("**[LE TEST 0:30-4:00]** Chaque personne goute une saveur differente apres le couscous. Reactions filmees en gros plan. Cotton candy : \u00AB El sucre nettoie el gras... ca marche?! \u00BB. Banana peel : \u00AB Kima menthe mais en version dessert. \u00BB. Mangue : \u00AB La acidite te3ha... PARFAIT ba3d el couscous. \u00BB Chaque saveur recoit une note. Graphique a l'ecran.", { color: WHITE }),
+  p("**[LE TEST 0:30-4:00]** Chaque personne goûté une saveur differente apres le couscous. Reactions filmees en gros plan. Cotton candy : \u00AB El sucre nettoie el gras... ca marche?! \u00BB. Banana peel : \u00AB Kima menthe mais en version dessert. \u00BB. Mangue : \u00AB La acidite te3ha... PARFAIT ba3d el couscous. \u00BB Chaque saveur recoit une note. Graphique a l'ecran.", { color: WHITE }),
   p("", { color: WHITE }),
   p("**[VERDICT 4:00-5:00]** \u00AB La glace avant el the? Franchement... c'est devenu indispensable. C'est frais, c'est doux, ca nettoie le palais. C'est le Clean Finale \u2014 et el the apres, c'est encore meilleur. \u00BB Tableau recapitulatif : quelle saveur pour quel plat tunisien (couscous \u2192 mangue, ojja \u2192 cotton candy, kafteji \u2192 banana peel).", { color: WHITE }),
   p("", { color: WHITE }),
@@ -590,7 +590,7 @@ p("Le brief est volontairement simple et identique pour tous les niveaux d'influ
 space(),
 colorBox([
   p("**Le brief unique :**", { size: 24, bold: true, color: WHITE }),
-  p("\u00AB Mange ton plat prefere. Puis goute Alnaseem. Filme ta reaction. C'est le Clean Finale. \u00BB", { size: 26, bold: true, color: WHITE, align: AlignmentType.CENTER }),
+  p("\u00AB Mange ton plat prefere. Puis goûté Alnaseem. Filme ta reaction. C'est le Clean Finale. \u00BB", { size: 26, bold: true, color: WHITE, align: AlignmentType.CENTER }),
 ], NAVY),
 
 space(),
@@ -635,13 +635,13 @@ colorBox([
 
 space(),
 colorBox([
-  p("**Phase 2 \u2014 ACCELERATION (2 mois)**", { size: 26, bold: true }),
+  p("**Phase 2 \u2014 ACCÉLÉRATION (2 mois)**", { size: 26, bold: true }),
   p("\u00AB Les saveurs dont tout le monde parle \u00BB", { italics: true }),
   p("La phase 2 capitalise sur l'attention génèree en phase 1. L'objectif est d'amplifier : plus de contenu, plus d'influenceurs, et le lancement de la Saga Kyroo qui construit l'univers de marque."),
   p(""),
   bullet("4-5 TikToks par semaine \u2014 focus taste tests saveurs différenciantes"),
   bullet("Saga Kyroo \u00AB le livreur de dessert \u00BB : 1 episode par semaine"),
-  bullet("Serie \u00AB T'as déjà goute ca en Tunisie? \u00BB (1 saveur par video)"),
+  bullet("Serie \u00AB T'as déjà goûté ca en Tunisie? \u00BB (1 saveur par video)"),
   bullet("10-15 micro-influenceurs actifs en simultane"),
   bullet("Story Takeovers Instagram par des influenceurs food"),
   bullet("Lancement des Ads Facebook drive-to-store par ville"),
@@ -656,7 +656,7 @@ colorBox([
   p(""),
   bullet("Challenge #CleanFinale a grande echelle sur TikTok"),
   bullet("Activation des macro-influenceurs (2-3) + 30-50 nano-influenceurs"),
-  bullet("Double message ete : Clean Finale + Sweet Moments en parallele"),
+  bullet("Double message été : Clean Finale + Sweet Moments en parallele"),
   bullet("Events terrain (degustations en supermarche, presence festivals)"),
   bullet("Concours \u00AB La meilleure recette Clean Finale \u00BB"),
   bullet("4 videos YouTube longues (best-of, edition speciale ete)"),
@@ -698,9 +698,9 @@ space(),
 simpleTable(
   ["Risque", "Impact", "Mitigation"],
   [
-    [{ text: "Un concurrent copie le positionnément Clean Finale", bold: true }, "Eleve", "L'avantage du premier occupant est considérable : celui qui installe le concept dans l'esprit du public le possede. De plus, les saveurs exclusives d'Alnaseem constituent une barriere a l'entree que les concurrents ne peuvent pas repliquer rapidement."],
-    [{ text: "Perception de \"marque etrangere\"", bold: true }, "Eleve", "Le ton 100% derja, les references culinaires ancrées (couscous, kafteji, ojja), et le recours a des influenceurs exclusivement tunisiens creent un ancrage local fort. Le storytelling est tunisien avant tout."],
-    [{ text: "Le concept \"apres-repas\" pas compris", bold: true }, "Moyen", "La répétition massive du message Clean Finale sur toutes les plateformes, combinee a l'influence structuree, installera le concept progressivement. Le Ramadan est le moment idéal pour l'ancrer."],
+    [{ text: "Un concurrent copie le positionnément Clean Finale", bold: true }, "Eleve", "L'avantage du premier occupant est considérable : celui qui installe le concept dans l'esprit du public le possède. De plus, les saveurs exclusives d'Alnaseem constituent une barriere a l'entree que les concurrents ne peuvent pas répliquer rapidement."],
+    [{ text: "Perception de \"marque etrangere\"", bold: true }, "Eleve", "Le ton 100% derja, les références culinaires ancrées (couscous, kafteji, ojja), et le recours a des influenceurs exclusivement tunisiens creent un ancrage local fort. Le storytelling est tunisien avant tout."],
+    [{ text: "Le concept \"apres-repas\" pas compris", bold: true }, "Moyen", "La répétition massive du message Clean Finale sur toutes les plateformes, combinee a l'influence structurée, installera le concept progressivement. Le Ramadan est le moment idéal pour l'ancrer."],
     [{ text: "Un concurrent lance TikTok avant nous", bold: true }, "Moyen", "Meme s'ils y vont en premier, leur contenu sera générique (product shots estivaux). Le notre est fondamentalement différencié (Clean Finale + saveurs exclusives). Le contenu prime sur la chronologie."],
     [{ text: "Creux de consommation en hiver", bold: true }, "Faible", "C'est precisement l'avantage du positionnément Clean Finale : on mange du couscous en hiver aussi. Le concept est désaisonnalisé par nature. Contenus hiver : \u00AB dessert chaud-froid \u00BB (affogato, etc.)."],
   ],
@@ -715,7 +715,7 @@ new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: 
 
 p("Cette stratégie repose sur une conviction simple : **Alnaseem a tout ce qu'il faut pour devenir la marque de glace #1 en Tunisie**. Le catalogue produit est superieur (199+ produits, 7 saveurs exclusives). La base Facebook est solide (239K). La mascotte Kyroo a un potentiel viral inexploite. Il ne manque qu'une chose : un positionnément qui sort du lot."),
 
-p("\u00AB Sweeten your EVERYDAY \u00BB est ce positionnément. Il permet a Alnaseem d'occuper **deux territoires simultanement** \u2014 celui des célébrations (ou tout le monde est deja) et celui du rituel quotidien (ou personne n'est encore). C'est un avantage structurel que la concurrence ne pourra pas repliquer facilement."),
+p("\u00AB Sweeten your EVERYDAY \u00BB est ce positionnément. Il permet a Alnaseem d'occuper **deux territoires simultanement** \u2014 celui des célébrations (ou tout le monde est deja) et celui du rituel quotidien (ou personne n'est encore). C'est un avantage structurel que la concurrence ne pourra pas répliquer facilement."),
 
 space(),
 bigQuote("\u00AB On ne demande plus la permission d'exister lors d'une fete. On s'impose a table tous les jours. \u00BB"),
